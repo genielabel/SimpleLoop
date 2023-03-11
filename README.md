@@ -27,7 +27,7 @@ SimpleLoop.boucle(#element, array)
       </div>
 	  
 	  
-      <script>
+     
       </body>
       </html>
 ```
