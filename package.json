@@ -1,0 +1,26 @@
+{
+  "name": "simpleloop",
+  "version": "1.0.0",
+  "description": "Make a simple loop with a json array and the html dom",
+  "main": "simpleLoop.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/genielabel/SimpleLoop.git"
+  },
+  "keywords": [
+    "loop",
+    "foreach",
+    "html",
+    "dom",
+    "array"
+  ],
+  "author": "genielabel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/genielabel/SimpleLoop/issues"
+  },
+  "homepage": "https://github.com/genielabel/SimpleLoop#readme"
+}
