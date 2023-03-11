@@ -1,6 +1,8 @@
 
 # Simple Loop
-Weighs only 1.3KB
+
+ Weighs only 1.3KB
+
 If you don't want to use a template engine or a javascript framework and you just want to make a simple loop.
 
 
@@ -26,13 +28,18 @@ SimpleLoop.boucle(#element, array)
          </div>
       </div>
 
-<script>
+
+      <script>
+      </body>
+      </html>
+```
+
+
+
+####Javascript　
+
+```javascript
 var array = [{name:"One"},{name:"Two"},{name:"Three"},{name:"Four"},{name:"Fiv"},{name:"six"}];
 
 SimpleLoop.boucle("loop", array)
-
-</script>
-
-      </body>
-      </html>
 ```
