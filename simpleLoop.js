@@ -1,8 +1,15 @@
 class SimpleLoop {
 
-
+  static isObject(objValue) {
+    return objValue && typeof objValue === 'object' && objValue.constructor === Object;
+  }
  static boucle(element, array = [], defaulTemplate) {
+
+
+
    const parent = document.getElementById(element);
+
+
    Object.byString = function(o, s) {
     s = s.replace(/\[(\w+)\]/g, '.$1'); // convert indexes to properties
     s = s.replace(/^\./, '');           // strip a leading dot
@@ -20,7 +27,15 @@ class SimpleLoop {
    var render = (template, data) => {
     return template.replace(/{{(.*?)}}/g, (match) => {
 
-      return Object.byString(data, match.split(/{{|}}/).filter(Boolean)[0].trim())
+
+
+if (SimpleLoop.isObject(data)) {
+  return Object.byString(data, match.split(/{{|}}/).filter(Boolean)[0].trim())
+}else {
+
+  return data
+}
+
     })
    }
 
@@ -43,6 +58,8 @@ let doc = cv.body.firstChild;
   parent.append(doc);
 
 }
+
+
 
 
   parent.removeChild(children[0]);
