@@ -3,11 +3,12 @@ class SimpleLoop {
   static isObject(objValue) {
     return objValue && typeof objValue === 'object' && objValue.constructor === Object;
   }
- static boucle(element, array = [], defaulTemplate) {
+ static boucle(element, array = [], defaulTemplate,placeholder) {
 
 
 
    const parent = document.getElementById(element);
+
 
 
    Object.byString = function(o, s) {
@@ -44,11 +45,24 @@ if (SimpleLoop.isObject(data)) {
 if (parent.hasChildNodes()) {
 
 let children = parent.children;
+const childrenLength = parent.children.length;
+
+if (defaulTemplate) {
+  parent.innerHTML = ""
+}else if (placeholder) {
+    parent.innerHTML = ""
+}
 const node = children[0]
 
 
 for(var i=0; i < array.length; i++) {
-var cln = node.cloneNode(true);
+var cln =  null;
+
+if (!defaulTemplate) {
+cln =  node.cloneNode(true);
+}else {
+  cln = defaulTemplate;
+}
 const innerHTML = defaulTemplate?defaulTemplate:cln.innerHTML
 const result = render(innerHTML,array[i]);
 
@@ -61,8 +75,21 @@ let doc = cv.body.firstChild;
 
 
 
+if (array.length == 0 && placeholder) {
 
-  parent.removeChild(children[0]);
+  for (var i = 0; i < childrenLength; i++) {
+
+
+    let cv = new DOMParser().parseFromString(placeholder, 'text/html');
+    let doc = cv.body.firstChild;
+
+      parent.append(doc);
+  }
+}
+if (children[0]) {
+    parent.removeChild(children[0]);
+}
+
 }
 
 
