@@ -86,8 +86,8 @@ if (array.length == 0 && placeholder) {
       parent.append(doc);
   }
 }
-if (children[0]) {
-    parent.removeChild(children[0]);
+if (children[0] && !defaulTemplate && !placeholder) {
+  parent.removeChild(children[0]);
 }
 
 }
